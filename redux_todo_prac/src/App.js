@@ -1,8 +1,8 @@
 import React from "react";
-import TodoList from "./pages/TodoList";
+import NewTodo from "./pages/NewTodo";
 
 function App() {
-  return <TodoList />;
+  return <NewTodo />;
 }
 
 export default App;

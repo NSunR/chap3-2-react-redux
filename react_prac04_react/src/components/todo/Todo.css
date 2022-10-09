@@ -1,0 +1,36 @@
+/* Todo.css */
+.conBox {
+  float: left;
+  width: 260px;
+  border: 1px solid black;
+  /* padding: 5px; */
+
+  gap: 10px;
+}
+
+.btnSet {
+  gap: 10px;
+  background-color: lightyellow;
+}
+
+.delBtn {
+  cursor: pointer;
+  width: 40%;
+
+  padding: 5px;
+
+  border: 1px solid red;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.okcanBtn {
+  float: right;
+  cursor: pointer;
+  width: 40%;
+
+  padding: 5px;
+
+  border: 1px solid blue;
+  border-radius: 10px;
+  background-color: #fff;
+}

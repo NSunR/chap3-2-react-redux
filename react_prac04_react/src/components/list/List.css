@@ -1,0 +1,12 @@
+/* List.css */
+.listwrap {
+  padding: 10px 20px;
+  background-color: lightcoral;
+}
+
+.todoWrap {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid blue;
+  gap: 10px;
+}
