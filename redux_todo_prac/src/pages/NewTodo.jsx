@@ -15,7 +15,11 @@ const Layout = (props) => {
 };
 
 function App() {
-  return <Layout>폼{/* <Form /> */}</Layout>;
+  return (
+    <Layout>
+      <Form />
+    </Layout>
+  );
 }
 
 export default App;

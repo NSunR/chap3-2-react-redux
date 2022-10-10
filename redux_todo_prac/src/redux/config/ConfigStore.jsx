@@ -1,12 +1,12 @@
 // 원래 있던 코드
-import { createStore } from "redux";
-import { combineReducers } from "redux";
+import { createStore } from "redux"; //리덕스 만들어주고
+import { combineReducers } from "redux"; //리듀서 결합시켜주고
 
 // 새롭게 추가한 부분
-import form from "../modules/counter";
+import todos from "../modules/todos";
 
 const rootReducer = combineReducers({
-  form: form, // <-- 새롭게 추가한 부분
+  todos: todos, // <-- 새롭게 추가한 부분
 });
 const store = createStore(rootReducer);
 

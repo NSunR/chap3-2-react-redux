@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
 //style
@@ -12,14 +12,15 @@ const FormBox = styled.form`
 
 const LabBox = styled.label`
   padding: 20px;
-  background-color: gray;
+  border: 1px solid gray;
 `;
 
 //function
 
 const Form = () => {
   const [value, setValue] = useState("");
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  // const useseleter
 
   const onChangehand = (e) => {
     const { value } = e.target;
@@ -30,7 +31,8 @@ const Form = () => {
   return (
     <FormBox>
       <div>
-        <label>Todos의 제목을 입력하세요</label>
+        <LabBox>Todos의 제목을 입력하세요</LabBox>
+        <input type="text" onChange={onChangehand} />
         <input type="text" onChange={onChangehand} />
       </div>
       <button>추가하기</button>
