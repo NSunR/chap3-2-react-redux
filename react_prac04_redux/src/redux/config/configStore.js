@@ -4,7 +4,8 @@ import { combineReducers } from "redux";
 import counter from "../modules/counter";
 
 const rootReducer = combineReducers({
-  counter: counter, // <-- 새롭게 추가한 부분
+  counters: counter, // <-- 새롭게 추가한 부분
+  //useSelector((state) => state.)
 });
 const store = createStore(rootReducer);
 
