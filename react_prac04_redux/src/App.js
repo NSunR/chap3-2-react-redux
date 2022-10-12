@@ -12,6 +12,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const onChangehand = (e) => {
+    c;
     const { value } = e.target;
     //event.target.value는 문자열이라
     //숫자형으로 형변환위해 +를 붙여줌
