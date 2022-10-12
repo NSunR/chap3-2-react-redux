@@ -27,12 +27,12 @@ export const okBtn = (payload) => {
   };
 };
 
-// export const getId = (payload) => {
-//   return {
-//     type: GETID,
-//     payload,
-//   };
-// };
+export const getId = (payload) => {
+  return {
+    type: GETID,
+    payload,
+  };
+};
 
 //initialState => useState
 const initState = {
@@ -71,7 +71,13 @@ const todo = (state = initState, action) => {
           }
         }),
       };
-
+    case "GETID":
+      return {
+        ...state,
+        todos: state.todos.find((todoId) => {
+          return todoId.id === action.payload;
+        }),
+      };
     default:
       return state;
   }

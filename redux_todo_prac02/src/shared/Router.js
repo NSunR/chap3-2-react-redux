@@ -1,17 +1,17 @@
-// import React from "react";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-// // import TodoList from "../pages/TodoList";
-// // import Works from "../pages/Works";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TodoList from "../pages/TodoList";
+import Work from "../pages/Work";
 
-// const Router = () => {
-//   return (
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/" element={<TodoList />} />
-//         <Route path="works" element={<Works />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// };
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TodoList />} />
+        <Route path="work" element={<Work />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-// export default Router;
+export default Router;

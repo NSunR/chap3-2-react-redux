@@ -2,8 +2,9 @@
 
 import React from "react";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux/es";
+import { useDispatch } from "react-redux/es";
 import { delBtn, okBtn } from "../../redux/modules/todo";
+import { Link } from "react-router-dom";
 
 //contents Wrap
 const ConBox = styled.div`
@@ -15,9 +16,9 @@ const ConBox = styled.div`
 //Button Zones
 const Contents = ({ todo }) => {
   const dispatch = useDispatch();
-  const gstore = useSelector((state) => state.todo.todos);
+  // const gstore = useSelector((state) => state.todo.todos);
 
-  console.log(gstore);
+  // console.log(gstore);
 
   const onDelBtn = (id) => {
     dispatch(delBtn(id));
@@ -31,6 +32,9 @@ const Contents = ({ todo }) => {
   return (
     <ConBox>
       <div className="board">
+        <Link to={`/${todo.id}`} key={todo.id}>
+          <div>상세보기</div>
+        </Link>
         <h2>{todo.title}</h2>
         <div>{todo.comment}</div>
         {/* <h2>{todo.title}</h2>
