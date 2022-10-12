@@ -3,7 +3,7 @@ import { combineReducers } from "redux"; //리듀서 결합시켜주고
 import todo from "../modules/todo";
 
 const rootReducer = combineReducers({
-  todo: todo,
+  todo,
 });
 
 const store = createStore(rootReducer);

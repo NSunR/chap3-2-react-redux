@@ -4,21 +4,35 @@ import { addBtn } from "../../redux/modules/todo";
 
 const Form = () => {
   const dispatch = useDispatch();
-  const gstore = useSelector((state) => state); //스토어 안의 initState값 조회
-  const todos = useSelector((state) => state.todo.fmTodo);
-  const init = useSelector((state) => state.todo);
+  const gstore = useSelector((state) => state.todo.todos); //스토어 안의 initState값 조회
+  // const init = useSelector((state) => state.todo);
 
-  console.log(init);
-  console.log(gstore); //store
+  // console.log(init);
+  // console.log(gstore); //store
+
   // console.log(init); //store
   //input 초기값, 세팅값
-  const [fmTodo, setFmTodo] = useState();
-  console.log(fmTodo);
-  const onInputValue = (e) => {
+  // const [fmTodo, setFmTodo] = useState();
+
+  const [title, setTitle] = useState("");
+  const [comment, setComment] = useState("");
+  // console.log(fmTodo);
+
+  const onInputTitle = (e) => {
     //value값 지정 저장
-    const { name, value } = e.target;
     //value값 새로이 저장 형태
-    setFmTodo({ ...fmTodo, [name]: value });
+    const name = e.target.value;
+
+    setTitle(name);
+    // console.log(...fmTodo);
+  };
+
+  const onInputComment = (e) => {
+    //value값 지정 저장
+    //value값 새로이 저장 형태
+    const comment = e.target.value;
+
+    setComment(comment);
     // console.log(...fmTodo);
   };
 
@@ -26,10 +40,14 @@ const Form = () => {
 
   const onOutputBtn = (e) => {
     e.preventDefault();
-    if (fmTodo.title.trim() === "" && fmTodo.comment.trim() === "") return;
-
-    dispatch(addBtn());
-
+    if (title.trim() === "" && comment.trim() === "") return;
+    const data = {
+      id: gstore[gstore.length - 1].id + 1,
+      title: title,
+      comment: comment,
+      isDone: false,
+    };
+    dispatch(addBtn(data));
     // setTodo(initState);
     // num++;
     // dispatch(addBtn(fmTodo));
@@ -40,19 +58,13 @@ const Form = () => {
     <form onSubmit={onOutputBtn}>
       <div>
         <label>제목</label>
-        <input
-          type="text"
-          name="title"
-          defaultValue="제목을 입력해주세요."
-          onChange={onInputValue}
-        />
+        <input type="text" name="title" value={title} onChange={onInputTitle} />
         <label>내용</label>
         <input
           type="text"
           name="comment"
-          defaultValue="내용을 입력해주세요."
-          value={fmTodo.comment}
-          onChange={onInputValue}
+          value={comment}
+          onChange={onInputComment}
         />
         <button>추가하기</button>
       </div>

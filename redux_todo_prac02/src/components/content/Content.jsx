@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux/es";
-import { delBtn } from "../../redux/modules/todo";
+import { delBtn, okBtn } from "../../redux/modules/todo";
 
 //contents Wrap
 const ConBox = styled.div`
@@ -12,36 +12,35 @@ const ConBox = styled.div`
   border-radius: 10px;
 `;
 
-//Button Zone
-
-const Contents = () => {
+//Button Zones
+const Contents = ({ todo }) => {
   const dispatch = useDispatch();
-  const reducer = useSelector((state) => state.todo);
-  const todos = useSelector((state) => state.todo.todos);
+  const gstore = useSelector((state) => state.todo.todos);
 
-  const onDeleteHand = (id) => {
+  console.log(gstore);
+
+  const onDelBtn = (id) => {
     dispatch(delBtn(id));
   };
 
-  const onStateHand = () => {
-    dispatch();
+  const onOkBtn = (id) => {
+    dispatch(okBtn(id));
   };
 
   // console.log(todo);
   return (
     <ConBox>
       <div className="board">
-        <h2>{todos.title}</h2>
-        <div>{todos.comment}</div>
+        <h2>{todo.title}</h2>
+        <div>{todo.comment}</div>
         {/* <h2>{todo.title}</h2>
         <div>{todo.comment}</div> */}
       </div>
       {/*Buttons - delBtn, okcanBtn  */}
       <div className="btnSet">
-        <button onClick={() => onDeleteHand}>삭제</button>
-        <button onClick={() => onStateHand}>
-          완료:취소
-          {/* {todo.isDone ? "취소" : "완료"} */}
+        <button onClick={() => onDelBtn(todo.id)}>삭제</button>
+        <button onClick={() => onOkBtn(todo.id)}>
+          {todo.isDone ? "취소" : "완료"}
         </button>
       </div>
     </ConBox>

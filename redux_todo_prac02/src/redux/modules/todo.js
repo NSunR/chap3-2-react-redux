@@ -3,6 +3,7 @@
 const ADDBTN = "ADDBTN";
 const DELBTN = "DELBTN";
 const OKBTN = "OKBTN";
+const GETID = "GETID";
 
 // // Action Creator
 export const addBtn = (payload) => {
@@ -26,12 +27,19 @@ export const okBtn = (payload) => {
   };
 };
 
+// export const getId = (payload) => {
+//   return {
+//     type: GETID,
+//     payload,
+//   };
+// };
+
 //initialState => useState
 const initState = {
   //초기값 , key값은 불러서 쓸 수 있게 부여함.
   todos: [
     { id: 1, title: "혼공자 챕터10", comment: "10-1", isDone: false },
-    { id: 2, title: "용이 승천하면", comment: "올라가용", isDone: false },
+    { id: 2, title: "용이 승천하면", comment: "올라가용", isDone: true },
   ],
 };
 
@@ -41,12 +49,29 @@ const todo = (state = initState, action) => {
   switch (action.type) {
     case "ADDBTN":
       return {
-        todos: [...state, action.payload],
+        todos: [...state.todos, action.payload],
       };
 
     case "DELBTN":
-      const TodoId = state.filter((delTodo) => delTodo.id !== action.id);
-      return TodoId;
+      console.log(action.payload);
+      return {
+        todos: state.todos.filter((todo) => todo.id !== action.payload),
+      };
+
+    case "OKBTN":
+      // console.log(action.payload);
+
+      return {
+        ...state,
+        todos: state.todos.map((todo) => {
+          if (todo.id === action.payload) {
+            return { ...todo, isDone: !todo.isDone };
+          } else {
+            return { ...todo };
+          }
+        }),
+      };
+
     default:
       return state;
   }
