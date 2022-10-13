@@ -4,7 +4,7 @@
 ### Introdution
 - Hae Rhee, Nam joined Team 2 in week 3.
 - Editor : Visual Studio Code(vscode)
-- stack & library & framework : React, Redux, Javascript
+- stack & library & framework : React, Redux, Javascript, styled-components, react-router-dom, hook
 
 # 챕터 3-2-주특기 숙련 과제
 ## 9기 주특기 3주차 과제, 항해 99
