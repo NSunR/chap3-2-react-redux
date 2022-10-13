@@ -48,6 +48,8 @@ const Form = () => {
       isDone: false,
     };
     dispatch(addBtn(data));
+    // setTitle("");
+    // setComment("");
     // setTodo(initState);
     // num++;
     // dispatch(addBtn(fmTodo));

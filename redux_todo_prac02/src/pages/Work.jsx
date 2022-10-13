@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getId } from "../redux/modules/todo.js";
 
-const Detail = () => {
+const Work = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todo.todos);
 
@@ -16,68 +16,68 @@ const Detail = () => {
   }, [dispatch, id]);
 
   return (
-    <StContainer>
-      <StDialog>
+    <div>
+      <div>
         <div>
-          <StDialogHeader>
+          <div>
             <div>ID :{todos.id}</div>
-            <StButton
+            <button
               onClick={() => {
                 navigate("/");
               }}
             >
               이전으로
-            </StButton>
-          </StDialogHeader>
-          <StTitle>{todos.title}</StTitle>
-          <StBody>{todos.comment}</StBody>
+            </button>
+          </div>
+          <div>{todos.title}</div>
+          <div>{todos.comment}</div>
         </div>
-      </StDialog>
-    </StContainer>
+      </div>
+    </div>
   );
 };
 
-export default Detail;
+export default Work;
 
-const StContainer = styled.div`
-  border: 2px solid #eee;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+// const StContainer = styled.div`
+//   border: 2px solid #eee;
+//   width: 100%;
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// `;
 
-const StDialog = styled.div`
-  width: 600px;
-  height: 400px;
-  border: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
+// const StDialog = styled.div`
+//   width: 600px;
+//   height: 400px;
+//   border: 1px solid #eee;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// `;
 
-const StDialogHeader = styled.div`
-  display: flex;
-  height: 80px;
-  justify-content: space-between;
-  padding: 0 24px;
-  align-items: center;
-`;
+// const StDialogHeader = styled.div`
+//   display: flex;
+//   height: 80px;
+//   justify-content: space-between;
+//   padding: 0 24px;
+//   align-items: center;
+// `;
 
-const StTitle = styled.h1`
-  padding: 0 24px;
-`;
+// const StTitle = styled.h1`
+//   padding: 0 24px;
+// `;
 
-const StBody = styled.main`
-  padding: 0 24px;
-`;
+// const StBody = styled.main`
+//   padding: 0 24px;
+// `;
 
-const StButton = styled.button`
-  border: 1px solid #fff;
-  height: 40px;
-  width: 120px;
-  background-color: #fff;
-  border-radius: 12px;
-  cursor: pointer;
-`;
+// const StButton = styled.button`
+//   border: 1px solid #fff;
+//   height: 40px;
+//   width: 120px;
+//   background-color: #fff;
+//   border-radius: 12px;
+//   cursor: pointer;
+// `;
