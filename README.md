@@ -1,4 +1,4 @@
-# chap4-react-prac
+# chap3-2-react-prac
 ## Uploading practices in week 4, port99 ##
 ### Introdution
 - Hae Rhee, Nam joined Team 1 in week 4.
